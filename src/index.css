@@ -1,0 +1,88 @@
+/* 1) Tailwind base, components, utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2) Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* .snap-container {
+  @apply snap-y snap-mandatory h-screen overflow-y-scroll;
+}
+
+.snap-container > section {
+  @apply snap-start h-screen;
+} */
+
+/* 3) Font-face for Tempus Sans ITC */
+@font-face {
+  font-family: 'TempusSansITC';
+  src: url('/src/assets/fonts/TEMPSITC.TTF') format('truetype');
+  font-weight: normal; /* Adjust if you have multiple weights */
+  font-style: normal;
+}
+
+/* 4) Font-face for Berlin Sans FB */
+@font-face {
+  font-family: 'BerlinSansFB';
+  src: url('/src/assets/fonts/BRLNSR.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 5) Font-face for Silkroad */
+@font-face {
+  font-family: 'SilkRoad';
+  src: url('/src/assets/fonts/SilkRoad.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 5) Tailwind utility classes for these fonts */
+.font-tempus {
+  font-family: 'TempusSansITC', sans-serif;
+}
+
+.font-berlin {
+  font-family: 'BerlinSansFB', sans-serif;
+}
+
+.font-silkroad {
+  font-family: 'SilkRoad', sans-serif;
+}
+
+@keyframes breathing {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.breathing-effect {
+  animation: breathing 4s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shining {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
