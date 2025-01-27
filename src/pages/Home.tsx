@@ -7,7 +7,7 @@ const Home: React.FC = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.2,
-    triggerOnce: true,
+    triggerOnce: false, // Allow animations to replay on reveal
   });
 
   // Trigger animation when inView changes and content is loaded
