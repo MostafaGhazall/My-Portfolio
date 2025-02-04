@@ -12,6 +12,12 @@ interface Project {
 
 const projectList: Project[] = [
   {
+    title: "Marketing Agency",
+    link: "https://marketing-agency-98pk-mostafa-ghazals-projects.vercel.app/",
+    image: "/projects/marketing-agency.jpg",
+    tools: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  },
+  {
     title: "Green-Co Website",
     link: "https://green-co-git-main-mostafa-ghazals-projects.vercel.app/",
     image: "/projects/green.jpg",
@@ -25,15 +31,9 @@ const projectList: Project[] = [
   },
   {
     title: "Gaming Cafe",
-    link: "https://currency-converter-lemon-nu.vercel.app/",
+    link: "https://gaming-cafe-mostafa-ghazals-projects.vercel.app/",
     image: "/projects/gamingcafe.jpg",
     tools: ["React.js", "Typescript", "Tailwind CSS", "Zustand"],
-  },
-  {
-    title: "Currency Converter",
-    link: "https://currency-converter-lemon-nu.vercel.app/",
-    image: "/projects/currency.jpg",
-    tools: ["React.js", "API Integration", "Tailwind CSS"],
   },
 ];
 

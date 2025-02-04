@@ -109,7 +109,7 @@ const About: React.FC = () => {
             }}
           >
             <motion.a
-              href="/CV.pdf"
+              href="/C.V.pdf"
               download
               className="relative inline-block mt-6 px-6 py-3 rounded bg-gradient-to-r from-fuchsia-700 to-purple-700 text-white font-bold overflow-hidden group"
               whileTap={{
