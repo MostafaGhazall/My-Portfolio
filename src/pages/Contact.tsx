@@ -192,8 +192,8 @@ const Contact: React.FC = () => {
             </button>
           </form>
         ) : (
-          <p className="text-green-600 text-lg font-semibold text-center">
-            Thank you! We'll get in touch soon. 🎉
+          <p className="bg-gradient-to-t from-cyan-500 to-slate-950 bg-clip-text text-transparent text-lg font-semibold text-center">
+            Thank you! We'll get in touch soon.
           </p>
         )}
       </motion.div>
