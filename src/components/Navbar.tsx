@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden"
+          className="md:hidden mr-5"
           onClick={toggleMobileNav}
           aria-label="Toggle mobile menu"
         >
@@ -120,7 +120,7 @@ const Navbar: React.FC = () => {
 
             {/* Close Button pinned top-right */}
             <button
-              className="absolute top-6 right-6 text-xl"
+              className="absolute top-6 right-12 text-xl"
               onClick={closeMobileNav}
             >
               X Close
@@ -131,8 +131,8 @@ const Navbar: React.FC = () => {
               className="
                 flex flex-col items-start justify-center
                 w-3/4 space-y-8
-                text-6xl font-bold tracking-wide
-                pl-40
+                text-5xl font-bold tracking-wide
+                pl-48
               "
             >
               {["About", "Projects", "Skills", "Contact"].map((link) => (
