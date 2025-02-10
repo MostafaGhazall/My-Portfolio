@@ -56,7 +56,7 @@ const About: React.FC = () => {
                 hidden: { opacity: 0, y: 20 }, // Start below with no opacity
                 visible: {
                   opacity: 1,
-                  y: [20, -10, 0], // Bounce up and settle at the original position
+                  y: [20, -10, 0], // Bounce up and settle
                   transition: {
                     duration: 0.5, // Duration of the bounce
                     ease: "easeOut",
@@ -98,7 +98,7 @@ const About: React.FC = () => {
               ))}
           </motion.div>
 
-          {/* Button Section */}
+          {/* Button Section (UPDATED) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -108,40 +108,59 @@ const About: React.FC = () => {
               delay: 0.4,
             }}
           >
-            <motion.a
-              href="/C.V.pdf"
-              download
-              className="relative inline-block mt-6 px-6 py-3 rounded bg-gradient-to-r from-fuchsia-700 to-purple-700 text-white font-bold overflow-hidden group"
-              whileTap={{
-                scale: 0.95,
-                backgroundColor: "#8e44ad",
-                boxShadow: "0px 2px 10px rgba(155, 89, 182, 0.4)",
-                transition: {
-                  duration: 0.1,
-                  ease: "easeInOut",
-                },
-              }}
-              onMouseMove={(e) => {
-                const rect = e.currentTarget.getBoundingClientRect();
-                e.currentTarget.style.setProperty(
-                  "--x",
-                  `${e.clientX - rect.left}px`
-                );
-                e.currentTarget.style.setProperty(
-                  "--y",
-                  `${e.clientY - rect.top}px`
-                );
-              }}
-            >
-              <span
-                className="absolute inset-0 bg-fuchsia-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+            <div className="relative inline-flex items-center justify-center">
+              {/* Conic Gradient behind the button (animate only the angle) */}
+              <motion.span
+                className="
+                absolute
+                -inset-1
+                rounded-full
+                pointer-events-none
+                z-0
+                blur-sm
+              "
                 style={{
-                  background:
-                    "radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.5), transparent 50%)",
+                  ["--angle" as any]: "0deg",
+                  background: `conic-gradient(
+                  from var(--angle),
+                  /* Half fuchsia, half purple, both at alpha=0.6 */
+                  rgba(192,38,211,0.6) 0deg,
+                  rgba(192,38,211,0.6) 180deg,
+                  rgba(126,34,206,0.6) 180deg,
+                  rgba(126,34,206,0.6) 360deg
+                )`,
                 }}
-              ></span>
-              <span className="relative">Get My Resume</span>
-            </motion.a>
+                animate={{ "--angle": "360deg" }}
+                transition={{
+                  // Smooth constant rotation with no slowdown or speedup
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: "linear",
+                }}
+              />
+
+              {/* Actual Button (front layer) */}
+              <motion.a
+                href="/C.V.pdf"
+                download
+                className="
+                relative z-10
+                inline-block
+                px-8 py-3
+                rounded-full
+                text-white text-lg font-semibold
+                bg-gray-950
+                border-2 border-transparent
+                transition-all duration-300
+              "
+                whileHover={{
+                  // Matches the gradient color, so the swirl is 'hidden' behind it
+                  boxShadow: "0 0 10px 3px rgba(192, 38, 211, 0.6)",
+                }}
+              >
+                Get My Resume
+              </motion.a>
+            </div>
           </motion.div>
         </div>
 
@@ -161,7 +180,7 @@ const About: React.FC = () => {
         >
           <motion.img
             key={inView ? "visible" : "hidden"} // Change key to trigger re-render
-            src="/about.png"
+            src="/about22.png"
             alt="Mostafa Ghazal About"
             className="about-image rounded-3xl shadow-lg w-[350px] h-[450px] object-cover"
             initial="hidden"

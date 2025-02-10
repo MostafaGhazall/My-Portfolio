@@ -3,19 +3,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useStore } from "../store/useStore";
 
 const Navbar: React.FC = () => {
-  const { isMobileNavOpen, toggleMobileNav, closeMobileNav, navTheme } = useStore();
+  const { isMobileNavOpen, toggleMobileNav, closeMobileNav, navTheme } =
+    useStore();
   const textColor = navTheme === "dark" ? "text-white" : "text-black";
+  const logoSrc = navTheme === "dark" ? "/logo-light.png" : "/logo-dark.png";
+  const underLine = navTheme === "dark" ? "bg-white" : "bg-black";
 
   // Entire menu slides in from the right
   const mobileMenuVariants = {
-    hidden: { opacity: 0, x: "100%" },  // start off-screen
+    hidden: { opacity: 0, x: "100%" },
     visible: {
       opacity: 1,
       x: "0%",
       transition: {
         duration: 0.3,
         when: "beforeChildren",
-        staggerChildren: 0.05, // faster reveal of links
+        staggerChildren: 0.05,
       },
     },
     exit: {
@@ -41,48 +44,46 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-colors ${textColor}`}>
-      <div className="flex items-center justify-between px-6 py-4 md:px-20">
-        {/* Logo */}
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-colors ${textColor}`}
+    >
+      <div className="flex items-center justify-between">
+        {/* Logo with Theme-Based Image */}
         <motion.a
           href="#home"
-          className="text-4xl md:text-5xl font-normal tracking-wide font-silkroad hover:text-[#ffdb39]"
+          className="w-24 md:w-24 h-auto"
           onClick={closeMobileNav}
-          initial={{ textShadow: "0px 0px 0px rgba(242, 255, 58, 0)" }}
-          animate={{
-            textShadow: [
-              "0px 0px 10px rgba(242, 255, 58, 0.5)",
-              "0px 0px 20px rgba(242, 255, 58, 0.7)",
-              "0px 0px 30px rgba(242, 255, 58, 1)",
-              "0px 0px 20px rgba(242, 255, 58, 0.7)",
-              "0px 0px 10px rgba(242, 255, 58, 0.5)",
-            ],
-          }}
           transition={{
             duration: 2,
             repeat: Infinity,
             repeatType: "reverse",
           }}
         >
-          Ghazal
+          <img
+            src={logoSrc}
+            alt="Ghazal Logo"
+          />
         </motion.a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-6 font-bold text-base">
+        <nav className="hidden md:flex space-x-6 font-century-regular text-base pr-6">
           {["About", "Projects", "Skills", "Contact"].map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="hover:text-[#ffdb39] transition-colors"
+              className="relative group text-current transition-colors"
             >
               {link}
+              <span
+                className={`absolute left-0 bottom-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full ${underLine}`}
+              />
             </a>
           ))}
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden mr-5"
+          className="md:hidden pr-12"
           onClick={toggleMobileNav}
           aria-label="Toggle mobile menu"
         >
@@ -141,12 +142,12 @@ const Navbar: React.FC = () => {
                   href={`#${link.toLowerCase()}`}
                   onClick={closeMobileNav}
                   variants={linkVariants}
-                  // Just a subtle hover shift
                   className="relative group"
                 >
                   <span className="group-hover:-translate-y-2 transition-transform inline-block">
                     {link}
                   </span>
+                  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full" />
                 </motion.a>
               ))}
             </div>

@@ -1,58 +1,65 @@
-/* 1) Tailwind base, components, utilities */
+/* Tailwind base, components, utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 2) Smooth scrolling */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* .snap-container {
-  @apply snap-y snap-mandatory h-screen overflow-y-scroll;
-}
-
-.snap-container > section {
-  @apply snap-start h-screen;
-} */
-
-/* 3) Font-face for Tempus Sans ITC */
+/* Define the Bold version of Agency FB */
 @font-face {
-  font-family: 'TempusSansITC';
-  src: url('/src/assets/fonts/TEMPSITC.TTF') format('truetype');
-  font-weight: normal; /* Adjust if you have multiple weights */
+  font-family: 'AgencyFB';
+  src: url('/src/assets/fonts/AGENCYB.TTF') format('truetype');
+  font-weight: 700;
   font-style: normal;
 }
 
-/* 4) Font-face for Berlin Sans FB */
+/* Define the Regular version of Agency FB */
 @font-face {
-  font-family: 'BerlinSansFB';
-  src: url('/src/assets/fonts/BRLNSR.TTF') format('truetype');
-  font-weight: normal;
+  font-family: 'AgencyFB';
+  src: url('/src/assets/fonts/AGENCYR.TTF') format('truetype');
+  font-weight: 400;
   font-style: normal;
 }
 
-/* 5) Font-face for Silkroad */
 @font-face {
-  font-family: 'SilkRoad';
-  src: url('/src/assets/fonts/SilkRoad.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'CenturyGothic';
+  src: url('/src/assets/fonts/GOTHICB.TTF') format('truetype');
+  font-weight: 700;
   font-style: normal;
 }
 
-/* 5) Tailwind utility classes for these fonts */
-.font-tempus {
-  font-family: 'TempusSansITC', sans-serif;
+@font-face {
+  font-family: 'CenturyGothic';
+  src: url('/src/assets/fonts/GOTHIC.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
-.font-berlin {
-  font-family: 'BerlinSansFB', sans-serif;
+/* Tailwind utility classes for Fonts */
+.font-agency-bold {
+  font-family: 'AgencyFB', sans-serif;
+  font-weight: 700;
 }
 
-.font-silkroad {
-  font-family: 'SilkRoad', sans-serif;
+.font-agency-regular {
+  font-family: 'AgencyFB', sans-serif;
+  font-weight: 400;
 }
 
+.font-century-bold {
+  font-family: 'CenturyGothic', sans-serif;
+  font-weight: 700;
+}
+
+.font-century-regular {
+  font-family: 'CenturyGothic', sans-serif;
+  font-weight: 400;
+}
+
+/* Button animation */
 @keyframes breathing {
   0%, 100% {
     transform: scale(1);
@@ -66,6 +73,7 @@ html {
   animation: breathing 4s infinite ease-in-out;
 }
 
+/* Floating animation */
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -78,11 +86,3 @@ html {
   }
 }
 
-@keyframes shining {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
