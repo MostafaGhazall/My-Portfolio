@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
             exit="exit"
           >
             {/* Big "MENU" text on the left side */}
-            <div className="absolute top-0 left-2 h-full w-1/4 flex items-center justify-center">
+            <div className="absolute top-0 left-3 h-full w-1/4 flex items-center justify-center">
               <span className="text-gray-300 text-[16rem] font-bold -rotate-90">
                 MENU
               </span>
@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
                 flex flex-col items-start justify-center
                 w-3/4 space-y-8
                 text-5xl font-bold tracking-wide
-                pl-44
+                pl-40
               "
             >
               {["About", "Projects", "Skills", "Contact"].map((link) => (
