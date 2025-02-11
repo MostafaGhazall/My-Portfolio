@@ -5,7 +5,7 @@ import {
   FaPhoneAlt,
   FaWhatsapp,
   FaLinkedin,
-  // FaGithub,
+  FaGithub,
   FaEnvelope,
 } from "react-icons/fa";
 
@@ -26,11 +26,11 @@ const Contact: React.FC = () => {
       link: "https://www.linkedin.com/in/mostafa-ghazal-software-engineer/",
       label: "LinkedIn",
     },
-    // {
-    //   icon: <FaGithub />,
-    //   link: "https://github.com/MostafaGhazall",
-    //   label: "GitHub",
-    // },
+    {
+      icon: <FaGithub />,
+      link: "https://github.com/MostafaGhazall",
+      label: "GitHub",
+    },
     {
       icon: <FaEnvelope />,
       link: "mailto:mostafaghazal210@gmail.com",
