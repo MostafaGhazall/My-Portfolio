@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
 
   // Intersection Observer to replay animations on reveal
   const { ref, inView } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.2,
   });
 
@@ -118,7 +118,7 @@ const Contact: React.FC = () => {
     <section
       id="contact"
       ref={ref}
-      className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-[#f0f4f8] px-6 py-16 gap-10"
+      className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gradient-to-t from-gray-300 via-gray-100 to-gray-50 px-6 py-16 gap-10"
     >
       {/* Left Side: Text & Icons */}
       <motion.div className="flex flex-col items-center lg:items-start max-w-lg text-center lg:text-left">

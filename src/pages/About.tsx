@@ -8,7 +8,7 @@ const About: React.FC = () => {
 
   // Observe the section
   const { ref, inView } = useInView({
-    triggerOnce: false, // Replay the animation on section reveal
+    triggerOnce: true, // Replay the animation on section reveal
     threshold: 0.2, // Trigger when 20% of the section is visible
   });
 

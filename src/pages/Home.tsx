@@ -25,7 +25,7 @@ const Home: React.FC = () => {
       id="home"
       ref={ref}
       className="
-        min-h-screen bg-[#f0f4f8] relative overflow-hidden
+        min-h-screen bg-gradient-to-t from-gray-300 via-gray-100 to-gray-50 relative overflow-hidden
         px-6 md:px-16 flex flex-col-reverse md:flex-row justify-center items-center
       "
     >

@@ -20,7 +20,7 @@ const skillIcons = [
 const Skills: React.FC = () => {
   // Observe the section
   const { ref, inView } = useInView({
-    triggerOnce: false, // Replay animations on reveal
+    triggerOnce: true, // Replay animations on reveal
     threshold: 0.2, // Trigger animations when 20% of the section is visible
   });
 
