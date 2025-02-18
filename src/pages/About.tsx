@@ -98,7 +98,7 @@ const About: React.FC = () => {
               ))}
           </motion.div>
 
-          {/* Button Section (UPDATED) */}
+          {/* Button Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -132,7 +132,7 @@ const About: React.FC = () => {
                 }}
                 animate={{ "--angle": "360deg" }}
                 transition={{
-                  // Smooth constant rotation with no slowdown or speedup
+                  // Smooth constant rotation
                   repeat: Infinity,
                   duration: 3,
                   ease: "linear",
