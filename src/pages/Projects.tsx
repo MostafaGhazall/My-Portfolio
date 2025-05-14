@@ -27,7 +27,7 @@ const projectList: Project[] = [
     title: "E-Commerce Platform",
     link: "https://e-commerce-website-mostafa-ghazals-projects.vercel.app/",
     image: "/projects/ecommerce.jpg",
-    tools: ["React.js", "Tailwind CSS", "Zustand"],
+    tools: ["React.js", "Tailwind CSS", "TypeScript", "Zustand"],
   },
   {
     title: "Gaming Cafe",
