@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
   const { isMobileNavOpen, toggleMobileNav, closeMobileNav, navTheme } =
     useStore();
   const textColor = navTheme === "dark" ? "text-white" : "text-black";
-  const logoSrc = navTheme === "dark" ? "/logo-light.png" : "/logo-dark.png";
+  const logoSrc = navTheme === "dark" ? "/logo-light-2.png" : "/logo-dark-2.png";
   const underLine = navTheme === "dark" ? "bg-white" : "bg-black";
 
   // Entire menu slides in from the right
@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
         {/* Logo with Theme-Based Image */}
         <motion.a
           href="#home"
-          className="w-24 md:w-24 h-auto"
+          className="w-20 md:w-28 h-auto pt-2"
           onClick={closeMobileNav}
           transition={{
             duration: 2,
